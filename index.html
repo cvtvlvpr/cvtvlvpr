@@ -153,8 +153,55 @@ footer{
 
 <body>
 
-<!-- ⭐ MÚSICA AUTOPLAY (TU ARCHIVO EXACTO) -->
-<audio id="bgm" src="SOUL WITHIN DREAMCORE  7 WEEKS & 3 DAYS.mp3" autoplay loop></audio>
+<!-- ⭐ MÚSICA AUTOPLAY (TU ARCHIVO RENOMBRADO) -->
+<audio id="bgm" src="soul_dreamcore.mp3" autoplay loop></audio>
 
 <script>
-document.addEvent
+document.addEventListener("click", () => {
+  const audio = document.getElementById("bgm");
+  audio.play().catch(()=>{});
+});
+</script>
+
+<div class="bg"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>CVTVLVPR</h1>
+  <p>No todos los que entran logran salir...</p>
+  <a class="btn" href="#">ENTRAR</a>
+</section>
+
+<!-- TARJETAS -->
+<section class="cards">
+  <div class="card twitch">
+    <h3>TWITCH</h3>
+    <p>Dreamcore<br>DIRECTOS EN VIVO</p>
+  </div>
+
+  <div class="card youtube">
+    <h3>YOUTUBE</h3>
+    <p>Pasillo Infinito<br>VIDEOS</p>
+  </div>
+
+  <div class="card discord">
+    <h3>DISCORD</h3>
+    <p>Poolrooms<br>COMUNIDAD</p>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section class="sobre">
+  <h2>SOBRE MÍ</h2>
+  <p>
+    Nuevo creador de contenido el cual no se deja llevar en números
+    sino en lo que le gusta.
+  </p>
+</section>
+
+<footer>
+  © 2023 CVTVLVPR - diseño original
+</footer>
+
+</body>
+</html>
