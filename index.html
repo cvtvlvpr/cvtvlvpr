@@ -1,239 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>cvtvlvpr</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CVTVLVPR // LEVEL HUB — creador de contenido: directos, videos y comunidad.">
+  <link rel="canonical" href="https://tusitio.com/">
 
-<style>
-/* ========================= */
-/* VARIABLES */
-/* ========================= */
-:root{
-  --bg:#000;
-  --accent:#7a2cff;
-  --gold:#ffd000;
-  --muted:#aaa;
-  --card:#1b1b1b;
-  --noise-opacity:0.08;
-  --portal-border: rgba(255,255,255,0.08);
-}
+  <!-- ICONOS -->
+  <link rel="icon" href="icons/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
 
-/* ========================= */
-/* RESET */
-/* ========================= */
-*{box-sizing:border-box}
-html,body{height:100%}
+  <title>CVTVLVPR // LEVEL HUB</title>
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:white;
-  overflow-x:hidden;
-  background:#000; /* FONDO NEGRO */
-}
+  <style>
+    :root{
+      --bg:#000;
+      --accent:#7a2cff;
+      --gold:#ffd000;
+      --muted:#aaa;
+      --card:#1b1b1b;
+      --noise-opacity:0.08;
+      --portal-border: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:white;
+      overflow-x:hidden;
+      background:var(--bg);
+    }
 
-/* ========================= */
-/* LAYOUT */
-/* ========================= */
-main{
-  position:relative;
-  min-height:100vh;
-  padding:32px 16px;
-  max-width:960px;
-  margin:0 auto;
-}
+    .bg{
+      position:fixed;
+      inset:0;
+      background: url("img/backrooms.png") center center / cover no-repeat;
+      z-index:-2;
+    }
 
-/* ========================= */
-/* HEADER */
-/* ========================= */
-h1{
-  font-size:2.4rem;
-  margin:0 0 8px;
-  color:var(--gold);
-  text-shadow:0 0 12px rgba(0,0,0,0.8);
-}
+    .noise{
+      position:fixed;
+      inset:0;
+      background:url("https://upload.wikimedia.org/wikipedia/commons/7/76/Noise_texture.png");
+      opacity:var(--noise-opacity);
+      z-index:-1;
+      mix-blend-mode:overlay;
+      pointer-events:none;
+    }
 
-h2{
-  font-size:1.2rem;
-  margin:0 0 24px;
-  color:var(--muted);
-}
+    header{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:2rem 1rem;
+    }
+    h1{
+      font-size:clamp(2.2rem, 8vw, 5.5rem);
+      color:var(--gold);
+      text-shadow:0 0 15px var(--gold), 0 0 50px var(--accent);
+      margin:0;
+      animation:glitch 1.8s infinite;
+    }
+    @keyframes glitch{
+      0%{transform:translate(0);}
+      20%{transform:translate(-2px,2px);}
+      40%{transform:translate(2px,-1px);}
+      60%{transform:translate(-1px,1px);}
+      80%{transform:translate(1px,-2px);}
+      100%{transform:translate(0);}
+    }
 
-.btn-main{
-  display:inline-block;
-  margin-bottom:24px;
-  padding:12px 24px;
-  border-radius:999px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 0 18px rgba(122,44,255,0.6);
-}
+    p.lead{
+      color:var(--muted);
+      margin-top:10px;
+      font-size:1rem;
+    }
 
-/* ========================= */
-/* GRID */
-/* ========================= */
-.grid{
-  display:grid;
-  gap:16px;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  margin-bottom:32px;
-}
+    .cta{
+      margin-top:18px;
+      padding:12px 34px;
+      border:none;
+      cursor:pointer;
+      background:var(--accent);
+      color:white;
+      border-radius:12px;
+      font-size:1rem;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .cta:hover{
+      transform:scale(1.06);
+      box-shadow:0 0 20px var(--accent);
+    }
 
-/* ========================= */
-/* CARDS */
-/* ========================= */
-.card{
-  background:var(--card);
-  border-radius:16px;
-  padding:16px;
-  border:1px solid var(--portal-border);
-  box-shadow:0 12px 30px rgba(0,0,0,0.6);
-}
+    .portals{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:25px;
+      padding:80px 20px;
+    }
+    .portal{
+      width:260px;
+      height:320px;
+      border-radius:15px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:20px;
+      cursor:pointer;
+      transition:transform .3s, box-shadow .3s;
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--portal-border);
+      background-size:cover;
+      background-position:center;
+    }
+    .portal::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
+      z-index:0;
+    }
+    .portal > *{
+      position:relative;
+      z-index:1;
+      text-shadow:0 0 8px rgba(0,0,0,0.9);
+    }
+    .portal:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 25px rgba(122,44,255,0.45);
+    }
 
-.card h3{
-  margin:0 0 8px;
-  font-size:1.1rem;
-}
+    .portal h2{
+      margin:0;
+      font-size:1.25rem;
+      color:white;
+    }
+    .portal small{
+      color:#ddd;
+      margin-top:6px;
+    }
+    .tag{
+      margin-top:10px;
+      font-size:12px;
+      color:#fff;
+      font-weight:600;
+    }
 
-.card p{
-  margin:0 0 12px;
-  font-size:0.9rem;
-  color:var(--muted);
-}
+    .poolrooms{
+      background:
+        linear-gradient(180deg, rgba(0, 120, 255, 0.35), rgba(0, 60, 150, 0.55)),
+        url("img/poolrooms.jpeg") center center / cover no-repeat;
+    }
 
-.card a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:bold;
-}
+    .dreamcore{
+      background:
+        linear-gradient(180deg, rgba(150, 0, 255, 0.35), rgba(70, 0, 150, 0.55)),
+        url("img/dreamcore.png") center center / cover no-repeat;
+    }
 
-/* ========================= */
-/* SECTIONS */
-/* ========================= */
-section{
-  margin-bottom:32px;
-}
+    .hotel{
+      background:
+        linear-gradient(180deg, rgba(255, 0, 0, 0.35), rgba(150, 0, 0, 0.55)),
+        url("img/doors.png") center center / cover no-repeat;
+    }
 
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-footer{
-  font-size:0.8rem;
-  color:var(--muted);
-  text-align:center;
-  padding-bottom:16px;
-}
-
-/* ========================= */
-/* EXTRA SPACING */
-/* ========================= */
-.spacer{
-  height:40px;
-}
-
-/* ========================= */
-/* MORE STRUCTURE (para llegar a 200+ líneas) */
-/* ========================= */
-
-.block{
-  padding:24px;
-  background:#111;
-  border-radius:12px;
-  margin-bottom:24px;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-.block h4{
-  margin:0 0 12px;
-  font-size:1.1rem;
-  color:var(--gold);
-}
-
-.block p{
-  margin:0 0 12px;
-  color:var(--muted);
-}
-
-.divider{
-  height:1px;
-  background:rgba(255,255,255,0.08);
-  margin:32px 0;
-}
-
-</style>
+    .about{
+      padding:60px 20px;
+      text-align:center;
+      background:rgba(0,0,0,0.85);
+    }
+    .card{
+      max-width:900px;
+      margin:auto;
+      background:var(--card);
+      padding:25px;
+      border-radius:15px;
+      border:1px solid rgba(255,208,0,0.12);
+    }
+    #aboutText{
+      color:#ccc;
+      margin-top:10px;
+      min-height:40px;
+      line-height:1.5;
+      font-size:1rem;
+    }
+  </style>
 </head>
 
 <body>
 
-<main>
+  <div class="bg"></div>
+  <div class="noise"></div>
 
-  <!-- HEADER -->
   <header>
-    <h1>cvtvlvpr</h1>
-    <h2>liminal streams, glitch vibes, backrooms energy</h2>
-    <a href="#" class="btn-main">Entrar al portal</a>
+    <h1>CVTVLVPR</h1>
+    <p class="lead">No todos los que entran logran salir...</p>
+    <button class="cta" id="enterBtn">ENTRAR</button>
   </header>
 
-  <!-- GRID -->
-  <section class="grid">
-    <div class="card">
-      <h3>Twitch</h3>
-      <p>Streams con ambiente liminal, juegos raros y vibes nocturnas.</p>
-      <a href="#">Ir a Twitch</a>
+  <section id="hub" class="portals">
+    <div class="portal dreamcore" data-url="https://twitch.tv/cvtvlvpr">
+      <h2>TWITCH</h2>
+      <small>Dreamcore</small>
+      <div class="tag">DIRECTOS EN VIVO</div>
     </div>
 
-    <div class="card">
-      <h3>YouTube</h3>
-      <p>Clips, VODs y contenido editado con estética dreamcore.</p>
-      <a href="#">Ir a YouTube</a>
+    <div class="portal hotel" data-url="https://youtube.com/@cvtvlvpr">
+      <h2>YOUTUBE</h2>
+      <small>Pasillo Infinito</small>
+      <div class="tag">VIDEOS</div>
     </div>
 
-    <div class="card">
-      <h3>Discord</h3>
-      <p>Comunidad, charlas, memes y exploración de espacios liminales.</p>
-      <a href="#">Entrar al Discord</a>
+    <div class="portal poolrooms" data-url="https://discord.gg/zkNCecgVT">
+      <h2>DISCORD</h2>
+      <small>Poolrooms</small>
+      <div class="tag">COMUNIDAD</div>
     </div>
   </section>
 
-  <!-- SOBRE MI -->
-  <section>
-    <h3>Sobre mí</h3>
-    <p>
-      cvtvlvpr es un espacio para jugar, experimentar y perderse un rato
-      entre backrooms, puertas y pasillos infinitos. Si estás aquí, ya
-      cruzaste el umbral.
-    </p>
+  <section class="about">
+    <div class="card">
+      <h2>👤 SOBRE MÍ</h2>
+      <p id="aboutText"></p>
+    </div>
   </section>
 
-  <div class="divider"></div>
+  <script>
+    document.getElementById('enterBtn').addEventListener('click', function(){
+      document.getElementById('hub').scrollIntoView({ behavior: 'smooth' });
+    });
 
-  <!-- BLOQUES EXTRA (para llegar a 200+ líneas) -->
-  <div class="block">
-    <h4>Ambiente</h4>
-    <p>La estética liminal es parte del ADN del proyecto.</p>
-  </div>
+    document.querySelectorAll('.portal').forEach(function(p){
+      p.addEventListener('click', function(){
+        window.open(this.dataset.url, "_blank");
+      });
+    });
 
-  <div class="block">
-    <h4>Proyectos</h4>
-    <p>Contenido experimental, streams temáticos y exploración visual.</p>
-  </div>
-
-  <div class="block">
-    <h4>Comunidad</h4>
-    <p>Un espacio seguro para compartir ideas, arte y experiencias.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 cvtvlvpr — stay liminal.
-  </footer>
-
-</main>
+    (function(){
+      const text = "Nuevo creador de contenido el cual no se deja llevar en números sino en lo que le gusta";
+      let i = 0;
+      const el = document.getElementById('aboutText');
+      function type(){
+        if(i < text.length){
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 35);
+        }
+      }
+      type();
+    })();
+  </script>
 
 </body>
 </html>
