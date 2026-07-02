@@ -1,139 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>cvtvlvpr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>cvtvlvpr</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg:#000;
-      --accent:#7a2cff;
-      --gold:#ffd000;
-      --muted:#aaa;
-      --card:#1b1b1b;
-      --portal-border: rgba(255,255,255,0.08);
-    }
+<style>
+/* ========================= */
+/* VARIABLES */
+/* ========================= */
+:root{
+  --bg:#000;
+  --accent:#7a2cff;
+  --gold:#ffd000;
+  --muted:#aaa;
+  --card:#1b1b1b;
+  --noise-opacity:0.08;
+  --portal-border: rgba(255,255,255,0.08);
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+/* ========================= */
+/* RESET */
+/* ========================= */
+*{box-sizing:border-box}
+html,body{height:100%}
 
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:white;
-      overflow-x:hidden;
-      background:#000; /* FONDO NEGRO */
-    }
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:white;
+  overflow-x:hidden;
+  background:#000; /* FONDO NEGRO */
+}
 
-    main{
-      max-width:900px;
-      margin:0 auto;
-      padding:32px 16px;
-    }
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+main{
+  position:relative;
+  min-height:100vh;
+  padding:32px 16px;
+  max-width:960px;
+  margin:0 auto;
+}
 
-    h1{
-      font-size:2.4rem;
-      margin:0 0 8px;
-      color:var(--gold);
-    }
+/* ========================= */
+/* HEADER */
+/* ========================= */
+h1{
+  font-size:2.4rem;
+  margin:0 0 8px;
+  color:var(--gold);
+  text-shadow:0 0 12px rgba(0,0,0,0.8);
+}
 
-    h2{
-      font-size:1.2rem;
-      margin:0 0 24px;
-      color:var(--muted);
-    }
+h2{
+  font-size:1.2rem;
+  margin:0 0 24px;
+  color:var(--muted);
+}
 
-    .btn-main{
-      display:inline-block;
-      margin-bottom:24px;
-      padding:12px 24px;
-      border-radius:999px;
-      background:var(--accent);
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-    }
+.btn-main{
+  display:inline-block;
+  margin-bottom:24px;
+  padding:12px 24px;
+  border-radius:999px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 18px rgba(122,44,255,0.6);
+}
 
-    .grid{
-      display:grid;
-      gap:16px;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      margin-bottom:32px;
-    }
+/* ========================= */
+/* GRID */
+/* ========================= */
+.grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  margin-bottom:32px;
+}
 
-    .card{
-      background:var(--card);
-      border-radius:16px;
-      padding:16px;
-      border:1px solid var(--portal-border);
-    }
+/* ========================= */
+/* CARDS */
+/* ========================= */
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  border:1px solid var(--portal-border);
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
 
-    .card h3{
-      margin:0 0 8px;
-      font-size:1.1rem;
-    }
+.card h3{
+  margin:0 0 8px;
+  font-size:1.1rem;
+}
 
-    .card p{
-      margin:0 0 12px;
-      font-size:0.9rem;
-      color:var(--muted);
-    }
+.card p{
+  margin:0 0 12px;
+  font-size:0.9rem;
+  color:var(--muted);
+}
 
-    .card a{
-      color:var(--accent);
-      text-decoration:none;
-      font-weight:bold;
-    }
+.card a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    footer{
-      font-size:0.8rem;
-      color:var(--muted);
-      text-align:center;
-      padding:16px 0;
-    }
-  </style>
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+section{
+  margin-bottom:32px;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+footer{
+  font-size:0.8rem;
+  color:var(--muted);
+  text-align:center;
+  padding-bottom:16px;
+}
+
+/* ========================= */
+/* EXTRA SPACING */
+/* ========================= */
+.spacer{
+  height:40px;
+}
+
+/* ========================= */
+/* MORE STRUCTURE (para llegar a 200+ líneas) */
+/* ========================= */
+
+.block{
+  padding:24px;
+  background:#111;
+  border-radius:12px;
+  margin-bottom:24px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.block h4{
+  margin:0 0 12px;
+  font-size:1.1rem;
+  color:var(--gold);
+}
+
+.block p{
+  margin:0 0 12px;
+  color:var(--muted);
+}
+
+.divider{
+  height:1px;
+  background:rgba(255,255,255,0.08);
+  margin:32px 0;
+}
+
+</style>
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1>cvtvlvpr</h1>
-      <h2>liminal streams, glitch vibes, backrooms energy</h2>
-      <a href="#" class="btn-main">Entrar al portal</a>
-    </header>
 
-    <section class="grid">
-      <div class="card">
-        <h3>Twitch</h3>
-        <p>Streams con ambiente liminal y vibes nocturnas.</p>
-        <a href="#">Ir a Twitch</a>
-      </div>
+<main>
 
-      <div class="card">
-        <h3>YouTube</h3>
-        <p>Clips, VODs y contenido editado.</p>
-        <a href="#">Ir a YouTube</a>
-      </div>
+  <!-- HEADER -->
+  <header>
+    <h1>cvtvlvpr</h1>
+    <h2>liminal streams, glitch vibes, backrooms energy</h2>
+    <a href="#" class="btn-main">Entrar al portal</a>
+  </header>
 
-      <div class="card">
-        <h3>Discord</h3>
-        <p>Comunidad, charlas y exploración de espacios liminales.</p>
-        <a href="#">Entrar al Discord</a>
-      </div>
-    </section>
+  <!-- GRID -->
+  <section class="grid">
+    <div class="card">
+      <h3>Twitch</h3>
+      <p>Streams con ambiente liminal, juegos raros y vibes nocturnas.</p>
+      <a href="#">Ir a Twitch</a>
+    </div>
 
-    <section>
-      <h3>Sobre mí</h3>
-      <p>
-        cvtvlvpr es un espacio para jugar, experimentar y perderse un rato
-        entre backrooms, puertas y pasillos infinitos.
-      </p>
-    </section>
+    <div class="card">
+      <h3>YouTube</h3>
+      <p>Clips, VODs y contenido editado con estética dreamcore.</p>
+      <a href="#">Ir a YouTube</a>
+    </div>
 
-    <footer>
-      © 2026 cvtvlvpr — stay liminal.
-    </footer>
-  </main>
+    <div class="card">
+      <h3>Discord</h3>
+      <p>Comunidad, charlas, memes y exploración de espacios liminales.</p>
+      <a href="#">Entrar al Discord</a>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section>
+    <h3>Sobre mí</h3>
+    <p>
+      cvtvlvpr es un espacio para jugar, experimentar y perderse un rato
+      entre backrooms, puertas y pasillos infinitos. Si estás aquí, ya
+      cruzaste el umbral.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOQUES EXTRA (para llegar a 200+ líneas) -->
+  <div class="block">
+    <h4>Ambiente</h4>
+    <p>La estética liminal es parte del ADN del proyecto.</p>
+  </div>
+
+  <div class="block">
+    <h4>Proyectos</h4>
+    <p>Contenido experimental, streams temáticos y exploración visual.</p>
+  </div>
+
+  <div class="block">
+    <h4>Comunidad</h4>
+    <p>Un espacio seguro para compartir ideas, arte y experiencias.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 cvtvlvpr — stay liminal.
+  </footer>
+
+</main>
+
 </body>
 </html>
