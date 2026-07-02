@@ -30,32 +30,32 @@ body{
 /* ========================= */
 .hero{
   text-align:center;
-  padding:140px 20px 120px; /* MÁS ESPACIO */
+  padding:200px 20px 180px; /* MUCHO MÁS ESPACIO */
 }
 
 .hero h1{
-  font-size:3.4rem;
+  font-size:3.8rem;
   color:#ffd000;
   text-shadow:0 0 20px rgba(0,0,0,0.8);
 }
 
 .hero p{
-  margin-top:14px;
-  font-size:1.3rem;
+  margin-top:20px;
+  font-size:1.4rem;
   color:#fff;
   text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
 .hero .btn{
   display:inline-block;
-  margin-top:40px;
-  padding:16px 50px;
+  margin-top:55px;
+  padding:20px 60px;
   background:#7a2cff;
   color:white;
   font-weight:bold;
   border-radius:999px;
   text-decoration:none;
-  font-size:1.2rem;
+  font-size:1.3rem;
   box-shadow:0 0 20px rgba(122,44,255,0.6);
 }
 
@@ -65,16 +65,17 @@ body{
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px; /* MÁS ESPACIO ENTRE TARJETAS */
+  gap:45px; /* MÁS ESPACIO ENTRE TARJETAS */
   padding:20px;
   max-width:1000px;
   margin:0 auto;
+  margin-top:150px; /* BAJAR TODO EL BLOQUE */
 }
 
 /* TARJETA BASE */
 .card{
-  padding:30px;
-  border-radius:20px;
+  padding:45px;
+  border-radius:22px;
   text-align:center;
   color:white;
   font-weight:bold;
@@ -84,26 +85,33 @@ body{
   box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
+/* FONDOS + VIBES COLORS */
 .twitch{
-  background-image:url("dreamcore.png");
+  background:
+    linear-gradient(180deg, rgba(150,0,255,0.45), rgba(70,0,150,0.65)),
+    url("dreamcore.png");
 }
 
 .youtube{
-  background-image:url("doors.png");
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.45), rgba(150,0,0,0.65)),
+    url("doors.png");
 }
 
 .discord{
-  background-image:url("poolrooms.jpeg");
+  background:
+    linear-gradient(180deg, rgba(0,120,255,0.45), rgba(0,60,150,0.65)),
+    url("poolrooms.jpeg");
 }
 
 .card h3{
-  font-size:1.6rem;
-  margin-bottom:12px;
+  font-size:1.8rem;
+  margin-bottom:16px;
   text-shadow:0 0 10px black;
 }
 
 .card p{
-  font-size:1rem;
+  font-size:1.15rem;
   opacity:0.95;
   text-shadow:0 0 10px black;
 }
@@ -113,13 +121,13 @@ body{
 /* ========================= */
 .sobre{
   background:#111;
-  padding:60px 20px; /* MÁS ESPACIO */
-  margin-top:60px; /* MÁS ESPACIO ANTES DE ESTA SECCIÓN */
+  padding:80px 20px;
+  margin-top:150px; /* BAJAR MÁS ESTA SECCIÓN */
   text-align:center;
 }
 
 .sobre h2{
-  font-size:1.8rem;
+  font-size:2rem;
   margin-bottom:20px;
   color:#ffd000;
 }
@@ -127,7 +135,7 @@ body{
 .sobre p{
   max-width:700px;
   margin:0 auto;
-  font-size:1.1rem;
+  font-size:1.25rem;
   color:#ccc;
 }
 
@@ -145,48 +153,8 @@ footer{
 
 <body>
 
-<!-- ⭐ MÚSICA AUTOPLAY -->
-<audio src="SOUL WITHIN DREAMCORE  7 WEEKS & 3 DAYS.mp3" autoplay loop></audio>
+<!-- ⭐ MÚSICA AUTOPLAY (TU ARCHIVO EXACTO) -->
+<audio id="bgm" src="SOUL WITHIN DREAMCORE  7 WEEKS & 3 DAYS.mp3" autoplay loop></audio>
 
-<div class="bg"></div>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>CVTVLVPR</h1>
-  <p>No todos los que entran logran salir...</p>
-  <a class="btn" href="#">ENTRAR</a>
-</section>
-
-<!-- TARJETAS -->
-<section class="cards">
-  <div class="card twitch">
-    <h3>TWITCH</h3>
-    <p>Dreamcore<br>DIRECTOS EN VIVO</p>
-  </div>
-
-  <div class="card youtube">
-    <h3>YOUTUBE</h3>
-    <p>Pasillo Infinito<br>VIDEOS</p>
-  </div>
-
-  <div class="card discord">
-    <h3>DISCORD</h3>
-    <p>Poolrooms<br>COMUNIDAD</p>
-  </div>
-</section>
-
-<!-- SOBRE MI -->
-<section class="sobre">
-  <h2>SOBRE MÍ</h2>
-  <p>
-    Nuevo creador de contenido el cual no se deja llevar en números
-    sino en lo que le gusta.
-  </p>
-</section>
-
-<footer>
-  © 2023 CVTVLVPR - diseño original
-</footer>
-
-</body>
-</html>
+<script>
+document.addEvent
