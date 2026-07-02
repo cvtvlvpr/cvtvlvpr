@@ -30,32 +30,32 @@ body{
 /* ========================= */
 .hero{
   text-align:center;
-  padding:220px 20px 200px; /* MÁS ESPACIO */
+  padding:140px 20px 120px; /* MÁS ESPACIO */
 }
 
 .hero h1{
-  font-size:3.8rem;
+  font-size:3.4rem;
   color:#ffd000;
   text-shadow:0 0 20px rgba(0,0,0,0.8);
 }
 
 .hero p{
-  margin-top:20px;
-  font-size:1.4rem;
+  margin-top:14px;
+  font-size:1.3rem;
   color:#fff;
   text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
 .hero .btn{
   display:inline-block;
-  margin-top:55px;
-  padding:20px 60px;
+  margin-top:40px;
+  padding:16px 50px;
   background:#7a2cff;
   color:white;
   font-weight:bold;
   border-radius:999px;
   text-decoration:none;
-  font-size:1.3rem;
+  font-size:1.2rem;
   box-shadow:0 0 20px rgba(122,44,255,0.6);
 }
 
@@ -65,58 +65,46 @@ body{
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:60px; /* MUCHO MÁS ESPACIO ENTRE TARJETAS */
+  gap:30px; /* MÁS ESPACIO ENTRE TARJETAS */
   padding:20px;
   max-width:1000px;
   margin:0 auto;
-  margin-top:180px; /* BAJAR TODO EL BLOQUE */
 }
 
 /* TARJETA BASE */
 .card{
-  padding:50px;
-  border-radius:22px;
+  padding:30px;
+  border-radius:20px;
   text-align:center;
   color:white;
   font-weight:bold;
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  box-shadow:0 0 25px rgba(0,0,0,0.7);
-  transition:transform .2s;
+  box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
-.card:hover{
-  transform:scale(1.05);
-}
-
-/* FONDOS + VIBES COLORS */
+/* FONDOS REALES */
 .twitch{
-  background:
-    linear-gradient(180deg, rgba(150,0,255,0.45), rgba(70,0,150,0.65)),
-    url("dreamcore.png");
+  background-image:url("dreamcore.png");
 }
 
 .youtube{
-  background:
-    linear-gradient(180deg, rgba(255,0,0,0.45), rgba(150,0,0,0.65)),
-    url("doors.png");
+  background-image:url("doors.png");
 }
 
 .discord{
-  background:
-    linear-gradient(180deg, rgba(0,120,255,0.45), rgba(0,60,150,0.65)),
-    url("poolrooms.jpeg");
+  background-image:url("poolrooms.jpeg");
 }
 
 .card h3{
-  font-size:1.9rem;
-  margin-bottom:18px;
+  font-size:1.6rem;
+  margin-bottom:12px;
   text-shadow:0 0 10px black;
 }
 
 .card p{
-  font-size:1.2rem;
+  font-size:1rem;
   opacity:0.95;
   text-shadow:0 0 10px black;
 }
@@ -126,13 +114,13 @@ body{
 /* ========================= */
 .sobre{
   background:#111;
-  padding:90px 20px;
-  margin-top:180px; /* BAJAR MÁS ESTA SECCIÓN */
+  padding:60px 20px; /* MÁS ESPACIO */
+  margin-top:60px; /* MÁS ESPACIO ANTES DE ESTA SECCIÓN */
   text-align:center;
 }
 
 .sobre h2{
-  font-size:2rem;
+  font-size:1.8rem;
   margin-bottom:20px;
   color:#ffd000;
 }
@@ -140,7 +128,7 @@ body{
 .sobre p{
   max-width:700px;
   margin:0 auto;
-  font-size:1.25rem;
+  font-size:1.1rem;
   color:#ccc;
 }
 
@@ -169,22 +157,20 @@ footer{
 
 <!-- TARJETAS -->
 <section class="cards">
-
-  <a class="card twitch" href="https://www.twitch.tv/cvtvlvpr" target="_blank">
+  <div class="card twitch">
     <h3>TWITCH</h3>
     <p>Dreamcore<br>DIRECTOS EN VIVO</p>
-  </a>
+  </div>
 
-  <a class="card youtube" href="https://www.youtube.com/@cvtvlvPR" target="_blank">
+  <div class="card youtube">
     <h3>YOUTUBE</h3>
     <p>Pasillo Infinito<br>VIDEOS</p>
-  </a>
+  </div>
 
-  <a class="card discord" href="https://discord.gg/8snPVCUxv" target="_blank">
+  <div class="card discord">
     <h3>DISCORD</h3>
     <p>Poolrooms<br>COMUNIDAD</p>
-  </a>
-
+  </div>
 </section>
 
 <!-- SOBRE MI -->
@@ -197,7 +183,7 @@ footer{
 </section>
 
 <footer>
-  © 2023 CVTVLVPR - diseño original
+  © 2026 CVTVLVPR - diseño original
 </footer>
 
 </body>
