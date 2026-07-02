@@ -6,87 +6,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-  :root{
-    --bg:#000;
-    --accent:#7a2cff;
-    --gold:#ffd000;
-    --muted:#aaa;
-    --card:#1b1b1b;
-    --noise-opacity:0.08;
-    --portal-border: rgba(255,255,255,0.08);
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
-    overflow-x:hidden;
-    background:transparent; /* antes estaba var(--bg) */
-  }
+    :root{
+      --bg:#000;
+      --accent:#7a2cff;
+      --gold:#ffd000;
+      --muted:#aaa;
+      --card:#1b1b1b;
+      --portal-border: rgba(255,255,255,0.08);
+    }
 
-  .bg{
-    position:fixed;
-    inset:0;
-    background: url("img/backrooms.png") center center / cover no-repeat;
-    z-index:-2;
-  }
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-  .overlay{
-    position:fixed;
-    inset:0;
-    background:radial-gradient(circle at 20% 0%, rgba(0,0,0,0.6), transparent),
-               radial-gradient(circle at 80% 100%, rgba(0,0,0,0.8), transparent);
-    z-index:-1;
-  }
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:white;
+      overflow-x:hidden;
+      background:#000; /* FONDO NEGRO */
+    }
 
-  main{
-    position:relative;
-    min-height:100vh;
-    padding:32px 16px;
-    max-width:960px;
-    margin:0 auto;
-  }
+    main{
+      max-width:900px;
+      margin:0 auto;
+      padding:32px 16px;
+    }
 
-  h1{
-    font-size:2.4rem;
-    margin:0 0 8px;
-    color:var(--gold);
-    text-shadow:0 0 12px rgba(0,0,0,0.8);
-  }
+    h1{
+      font-size:2.4rem;
+      margin:0 0 8px;
+      color:var(--gold);
+    }
 
-  h2{
-    font-size:1.2rem;
-    margin:0 0 24px;
-    color:var(--muted);
-  }
+    h2{
+      font-size:1.2rem;
+      margin:0 0 24px;
+      color:var(--muted);
+    }
 
-  .btn-main{
-    display:inline-block;
-    margin-bottom:24px;
-    padding:12px 24px;
-    border-radius:999px;
-    background:var(--accent);
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    box-shadow:0 0 18px rgba(122,44,255,0.6);
-  }
+    .btn-main{
+      display:inline-block;
+      margin-bottom:24px;
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--accent);
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
 
-  .grid{
-    display:grid;
-    gap:16px;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    margin-bottom:32px;
-  }
+    .grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      margin-bottom:32px;
+    }
 
-  .card{
-    background:var(--card);
-    border-radius:16px;
-    padding:16px;
-    border:1px solid var(--portal-border);
-    box-shadow:0 12px 30px rgba(0,0,0,0.6);
-  }
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:16px;
+      border:1px solid var(--portal-border);
+    }
 
-  .card h3{
-    margin
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.1rem;
+    }
+
+    .card p{
+      margin:0 0 12px;
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    .card a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    footer{
+      font-size:0.8rem;
+      color:var(--muted);
+      text-align:center;
+      padding:16px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>cvtvlvpr</h1>
+      <h2>liminal streams, glitch vibes, backrooms energy</h2>
+      <a href="#" class="btn-main">Entrar al portal</a>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Twitch</h3>
+        <p>Streams con ambiente liminal y vibes nocturnas.</p>
+        <a href="#">Ir a Twitch</a>
+      </div>
+
+      <div class="card">
+        <h3>YouTube</h3>
+        <p>Clips, VODs y contenido editado.</p>
+        <a href="#">Ir a YouTube</a>
+      </div>
+
+      <div class="card">
+        <h3>Discord</h3>
+        <p>Comunidad, charlas y exploración de espacios liminales.</p>
+        <a href="#">Entrar al Discord</a>
+      </div>
+    </section>
+
+    <section>
+      <h3>Sobre mí</h3>
+      <p>
+        cvtvlvpr es un espacio para jugar, experimentar y perderse un rato
+        entre backrooms, puertas y pasillos infinitos.
+      </p>
+    </section>
+
+    <footer>
+      © 2026 cvtvlvpr — stay liminal.
+    </footer>
+  </main>
+</body>
+</html>
