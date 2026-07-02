@@ -1,263 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CVTVLVPR // LEVEL HUB — creador de contenido: directos, videos y comunidad.">
-  <link rel="canonical" href="https://tusitio.com/">
+<meta charset="UTF-8">
+<title>CVTVLVPR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ICONOS -->
-  <link rel="icon" href="icons/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000">
+<style>
+/* ========================= */
+/* ESTILOS BASE */
+/* ========================= */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
 
-  <title>CVTVLVPR // LEVEL HUB</title>
+/* ========================= */
+/* FONDO BACKROOMS */
+/* ========================= */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("backrooms.png") center center / cover no-repeat;
+  z-index:-2;
+  filter:brightness(0.85);
+}
 
-  <style>
-    :root{
-      --bg:#000;
-      --accent:#7a2cff;
-      --gold:#ffd000;
-      --muted:#aaa;
-      --card:#1b1b1b;
-      --noise-opacity:0.08;
-      --portal-border: rgba(255,255,255,0.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:white;
-      overflow-x:hidden;
-      background:var(--bg);
-    }
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero{
+  text-align:center;
+  padding:120px 20px 80px;
+}
 
-    .bg{
-      position:fixed;
-      inset:0;
-      background: url("img/backrooms.png") center center / cover no-repeat;
-      z-index:-2;
-    }
+.hero h1{
+  font-size:3rem;
+  color:#ffd000;
+  text-shadow:0 0 20px rgba(0,0,0,0.8);
+}
 
-    .noise{
-      position:fixed;
-      inset:0;
-      background:url("https://upload.wikimedia.org/wikipedia/commons/7/76/Noise_texture.png");
-      opacity:var(--noise-opacity);
-      z-index:-1;
-      mix-blend-mode:overlay;
-      pointer-events:none;
-    }
+.hero p{
+  margin-top:10px;
+  font-size:1.2rem;
+  color:#fff;
+  text-shadow:0 0 10px rgba(0,0,0,0.7);
+}
 
-    header{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:2rem 1rem;
-    }
-    h1{
-      font-size:clamp(2.2rem, 8vw, 5.5rem);
-      color:var(--gold);
-      text-shadow:0 0 15px var(--gold), 0 0 50px var(--accent);
-      margin:0;
-      animation:glitch 1.8s infinite;
-    }
-    @keyframes glitch{
-      0%{transform:translate(0);}
-      20%{transform:translate(-2px,2px);}
-      40%{transform:translate(2px,-1px);}
-      60%{transform:translate(-1px,1px);}
-      80%{transform:translate(1px,-2px);}
-      100%{transform:translate(0);}
-    }
+.hero .btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 40px;
+  background:#7a2cff;
+  color:white;
+  font-weight:bold;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:1.1rem;
+  box-shadow:0 0 20px rgba(122,44,255,0.6);
+}
 
-    p.lead{
-      color:var(--muted);
-      margin-top:10px;
-      font-size:1rem;
-    }
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  padding:40px 20px;
+  max-width:900px;
+  margin:0 auto;
+}
 
-    .cta{
-      margin-top:18px;
-      padding:12px 34px;
-      border:none;
-      cursor:pointer;
-      background:var(--accent);
-      color:white;
-      border-radius:12px;
-      font-size:1rem;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .cta:hover{
-      transform:scale(1.06);
-      box-shadow:0 0 20px var(--accent);
-    }
+.card{
+  padding:20px;
+  border-radius:16px;
+  text-align:center;
+  color:white;
+  font-weight:bold;
+}
 
-    .portals{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:25px;
-      padding:80px 20px;
-    }
-    .portal{
-      width:260px;
-      height:320px;
-      border-radius:15px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:20px;
-      cursor:pointer;
-      transition:transform .3s, box-shadow .3s;
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--portal-border);
-      background-size:cover;
-      background-position:center;
-    }
-    .portal::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
-      z-index:0;
-    }
-    .portal > *{
-      position:relative;
-      z-index:1;
-      text-shadow:0 0 8px rgba(0,0,0,0.9);
-    }
-    .portal:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 25px rgba(122,44,255,0.45);
-    }
+.card h3{
+  font-size:1.4rem;
+  margin-bottom:10px;
+}
 
-    .portal h2{
-      margin:0;
-      font-size:1.25rem;
-      color:white;
-    }
-    .portal small{
-      color:#ddd;
-      margin-top:6px;
-    }
-    .tag{
-      margin-top:10px;
-      font-size:12px;
-      color:#fff;
-      font-weight:600;
-    }
+.card p{
+  font-size:0.9rem;
+  opacity:0.9;
+}
 
-    .poolrooms{
-      background:
-        linear-gradient(180deg, rgba(0, 120, 255, 0.35), rgba(0, 60, 150, 0.55)),
-        url("img/poolrooms.jpeg") center center / cover no-repeat;
-    }
+/* Colores de cada tarjeta */
+.twitch{background:#9146FF;}
+.youtube{background:#FF0000;}
+.discord{background:#5865F2;}
 
-    .dreamcore{
-      background:
-        linear-gradient(180deg, rgba(150, 0, 255, 0.35), rgba(70, 0, 150, 0.55)),
-        url("img/dreamcore.png") center center / cover no-repeat;
-    }
+/* ========================= */
+/* SOBRE MI */
+/* ========================= */
+.sobre{
+  background:#111;
+  padding:40px 20px;
+  margin-top:40px;
+  text-align:center;
+}
 
-    .hotel{
-      background:
-        linear-gradient(180deg, rgba(255, 0, 0, 0.35), rgba(150, 0, 0, 0.55)),
-        url("img/doors.png") center center / cover no-repeat;
-    }
+.sobre h2{
+  font-size:1.6rem;
+  margin-bottom:20px;
+  color:#ffd000;
+}
 
-    .about{
-      padding:60px 20px;
-      text-align:center;
-      background:rgba(0,0,0,0.85);
-    }
-    .card{
-      max-width:900px;
-      margin:auto;
-      background:var(--card);
-      padding:25px;
-      border-radius:15px;
-      border:1px solid rgba(255,208,0,0.12);
-    }
-    #aboutText{
-      color:#ccc;
-      margin-top:10px;
-      min-height:40px;
-      line-height:1.5;
-      font-size:1rem;
-    }
-  </style>
+.sobre p{
+  max-width:700px;
+  margin:0 auto;
+  font-size:1rem;
+  color:#ccc;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#777;
+  font-size:0.8rem;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="bg"></div>
-  <div class="noise"></div>
+<div class="bg"></div>
 
-  <header>
-    <h1>CVTVLVPR</h1>
-    <p class="lead">No todos los que entran logran salir...</p>
-    <button class="cta" id="enterBtn">ENTRAR</button>
-  </header>
+<!-- HERO -->
+<section class="hero">
+  <h1>CVTVLVPR</h1>
+  <p>No todos los que entran logran salir...</p>
+  <a class="btn" href="#">ENTRAR</a>
+</section>
 
-  <section id="hub" class="portals">
-    <div class="portal dreamcore" data-url="https://twitch.tv/cvtvlvpr">
-      <h2>TWITCH</h2>
-      <small>Dreamcore</small>
-      <div class="tag">DIRECTOS EN VIVO</div>
-    </div>
+<!-- TARJETAS -->
+<section class="cards">
+  <div class="card twitch">
+    <h3>TWITCH</h3>
+    <p>Dreamcore<br>DIRECTOS EN VIVO</p>
+  </div>
 
-    <div class="portal hotel" data-url="https://youtube.com/@cvtvlvpr">
-      <h2>YOUTUBE</h2>
-      <small>Pasillo Infinito</small>
-      <div class="tag">VIDEOS</div>
-    </div>
+  <div class="card youtube">
+    <h3>YOUTUBE</h3>
+    <p>Pasillo Infinito<br>VIDEOS</p>
+  </div>
 
-    <div class="portal poolrooms" data-url="https://discord.gg/zkNCecgVT">
-      <h2>DISCORD</h2>
-      <small>Poolrooms</small>
-      <div class="tag">COMUNIDAD</div>
-    </div>
-  </section>
+  <div class="card discord">
+    <h3>DISCORD</h3>
+    <p>Poolrooms<br>COMUNIDAD</p>
+  </div>
+</section>
 
-  <section class="about">
-    <div class="card">
-      <h2>👤 SOBRE MÍ</h2>
-      <p id="aboutText"></p>
-    </div>
-  </section>
+<!-- SOBRE MI -->
+<section class="sobre">
+  <h2>SOBRE MÍ</h2>
+  <p>
+    Nuevo creador de contenido el cual no se deja llevar en números
+    sino en lo que le gusta.
+  </p>
+</section>
 
-  <script>
-    document.getElementById('enterBtn').addEventListener('click', function(){
-      document.getElementById('hub').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.querySelectorAll('.portal').forEach(function(p){
-      p.addEventListener('click', function(){
-        window.open(this.dataset.url, "_blank");
-      });
-    });
-
-    (function(){
-      const text = "Nuevo creador de contenido el cual no se deja llevar en números sino en lo que le gusta";
-      let i = 0;
-      const el = document.getElementById('aboutText');
-      function type(){
-        if(i < text.length){
-          el.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, 35);
-        }
-      }
-      type();
-    })();
-  </script>
+<footer>
+  © 2026 CVTVLVPR — stay liminal.
+</footer>
 
 </body>
 </html>
