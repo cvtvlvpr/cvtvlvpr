@@ -4,173 +4,19 @@
 <meta charset="UTF-8">
 <title>CVTVLVPR</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#000;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* ========================= */
-/* FONDO BACKROOMS */
-/* ========================= */
-.bg{
-  position:fixed;
-  inset:0;
-  background:url("backrooms.png") center center / cover no-repeat;
-  z-index:-2;
-  filter:brightness(0.85);
-}
-
-/* ========================= */
-/* HERO */
-/* ========================= */
-.hero{
-  text-align:center;
-  padding:220px 20px 200px;
-}
-
-.hero h1{
-  font-size:3.8rem;
-  color:#ffd000;
-  text-shadow:0 0 20px rgba(0,0,0,0.8);
-}
-
-.hero p{
-  margin-top:20px;
-  font-size:1.4rem;
-  color:#fff;
-  text-shadow:0 0 10px rgba(0,0,0,0.7);
-}
-
-.hero .btn{
-  display:inline-block;
-  margin-top:55px;
-  padding:20px 60px;
-  background:#7a2cff;
-  color:white;
-  font-weight:bold;
-  border-radius:999px;
-  text-decoration:none;
-  font-size:1.3rem;
-  box-shadow:0 0 20px rgba(122,44,255,0.6);
-}
-
-/* ========================= */
-/* TARJETAS */
-/* ========================= */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:60px;
-  padding:20px;
-  max-width:1000px;
-  margin:0 auto;
-  margin-top:180px;
-}
-
-/* TARJETA BASE */
-.card{
-  padding:50px;
-  border-radius:22px;
-  text-align:center;
-  color:white;
-  font-weight:bold;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  box-shadow:0 0 25px rgba(0,0,0,0.7);
-  transition:transform .2s;
-}
-
-.card:hover{
-  transform:scale(1.05);
-}
-
-/* ========================= */
-/* FONDOS + VIBES COLORS */
-/* ========================= */
-
-.twitch{
-  background:
-    linear-gradient(180deg, rgba(150,0,255,0.25), rgba(70,0,150,0.45)),
-    url("dreamcore.jpeg");
-}
-
-.youtube{
-  background:
-    linear-gradient(180deg, rgba(255,0,0,0.25), rgba(150,0,0,0.45)),
-    url("doors.png");
-}
-
-.discord{
-  background:
-    linear-gradient(180deg, rgba(0,120,255,0.25), rgba(0,60,150,0.45)),
-    url("poolrooms.jpeg");
-}
-
-.card h3{
-  font-size:1.9rem;
-  margin-bottom:18px;
-  text-shadow:0 0 10px black;
-}
-
-.card p{
-  font-size:1.2rem;
-  opacity:0.95;
-  text-shadow:0 0 10px black;
-}
-
-/* ========================= */
-/* SOBRE MI */
-/* ========================= */
-.sobre{
-  background:#111;
-  padding:90px 20px;
-  margin-top:180px;
-  text-align:center;
-}
-
-.sobre h2{
-  font-size:2rem;
-  margin-bottom:20px;
-  color:#ffd000;
-}
-
-.sobre p{
-  max-width:700px;
-  margin:0 auto;
-  font-size:1.25rem;
-  color:#ccc;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-footer{
-  text-align:center;
-  padding:30px;
-  color:#777;
-  font-size:0.8rem;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="bg"></div>
 
-<!-- HERO -->
 <section class="hero">
   <h1>CVTVLVPR</h1>
   <p>No todos los que entran logran salir...</p>
   <a class="btn" href="#links">ENTRAR</a>
 </section>
 
-<!-- TARJETAS -->
 <section class="cards" id="links">
 
   <a class="card twitch" href="https://www.twitch.tv/cvtvlvpr" target="_blank">
@@ -190,13 +36,9 @@ footer{
 
 </section>
 
-<!-- SOBRE MI -->
 <section class="sobre">
   <h2>SOBRE MÍ</h2>
-  <p>
-    Nuevo creador de contenido el cual no se deja llevar en números
-    sino en lo que le gusta.
-  </p>
+  <p>Nuevo creador de contenido el cual no se deja llevar en números sino en lo que le gusta.</p>
 </section>
 
 <footer>
