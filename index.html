@@ -30,7 +30,7 @@ body{
 /* ========================= */
 .hero{
   text-align:center;
-  padding:140px 20px 120px; /* MÁS ESPACIO */
+  padding:140px 20px 120px;
 }
 
 .hero h1{
@@ -65,10 +65,11 @@ body{
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px; /* MÁS ESPACIO ENTRE TARJETAS */
+  gap:50px; /* SEPARACIÓN REAL */
   padding:20px;
   max-width:1000px;
   margin:0 auto;
+  margin-top:80px; /* BAJAR EL BLOQUE */
 }
 
 /* TARJETA BASE */
@@ -82,19 +83,33 @@ body{
   background-position:center;
   background-repeat:no-repeat;
   box-shadow:0 0 20px rgba(0,0,0,0.6);
+  transition:.3s;
 }
 
-/* FONDOS REALES */
+.card:hover{
+  transform:scale(1.05);
+}
+
+/* ========================= */
+/* VIBES COLORS + IMÁGENES */
+/* ========================= */
+
 .twitch{
-  background-image:url("dreamcore.png");
+  background:
+    linear-gradient(180deg, rgba(150,0,255,0.35), rgba(70,0,150,0.55)),
+    url("dreamcore.png") center/cover;
 }
 
 .youtube{
-  background-image:url("doors.png");
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.35), rgba(150,0,0,0.55)),
+    url("doors.png") center/cover;
 }
 
 .discord{
-  background-image:url("poolrooms.jpeg");
+  background:
+    linear-gradient(180deg, rgba(0,120,255,0.35), rgba(0,60,150,0.55)),
+    url("poolrooms.jpeg") center/cover;
 }
 
 .card h3{
@@ -114,8 +129,8 @@ body{
 /* ========================= */
 .sobre{
   background:#111;
-  padding:60px 20px; /* MÁS ESPACIO */
-  margin-top:60px; /* MÁS ESPACIO ANTES DE ESTA SECCIÓN */
+  padding:60px 20px;
+  margin-top:80px;
   text-align:center;
 }
 
@@ -152,11 +167,11 @@ footer{
 <section class="hero">
   <h1>CVTVLVPR</h1>
   <p>No todos los que entran logran salir...</p>
-  <a class="btn" href="#">ENTRAR</a>
+  <a class="btn" href="#links">ENTRAR</a>
 </section>
 
 <!-- TARJETAS -->
-<section class="cards">
+<section class="cards" id="links">
   <div class="card twitch">
     <h3>TWITCH</h3>
     <p>Dreamcore<br>DIRECTOS EN VIVO</p>
